@@ -43,4 +43,9 @@ public class ApiController {
     }
 
 
+    @GetMapping("/logout")
+    public String logout(){
+        return "退出";
+    }
+
 }
