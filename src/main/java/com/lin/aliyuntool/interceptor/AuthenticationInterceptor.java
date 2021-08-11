@@ -53,7 +53,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     AccessKeyId = JWT.decode(token).getAudience().get(0);
                 } catch (JWTDecodeException j) {
-                    throw new RuntimeException("401");
+                    throw new RuntimeException("401 Unauthorized");
                 }
                 User user = userService.findUserByAccessKeyId(AccessKeyId);
                 if (user == null) {
@@ -64,7 +64,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 try {
                     jwtVerifier.verify(token);
                 } catch (JWTVerificationException e) {
-                    throw new RuntimeException("401");
+                    throw new RuntimeException("401 Unauthorized");
                 }
                 return true;
             }

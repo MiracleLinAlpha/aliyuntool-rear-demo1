@@ -48,4 +48,56 @@ public class ApiController {
         return "退出";
     }
 
+
+
+
+    @UserLoginToken
+    @PostMapping("/addRuleToAll")
+    public String addRuleToAll() {
+
+        return "";
+    }
+
+
+
+    @UserLoginToken
+        @PostMapping("/addRuleByIP")
+    public String addRuleByIP() {
+
+        return "";
+    }
+
+
+    @UserLoginToken
+    @PostMapping("/addRuleByGroupId")
+    public String addRuleByGroupId() {
+
+        return "";
+    }
+
+
+    @UserLoginToken
+    @PostMapping("/deleteRuleToAll")
+    public String deleteRuleToAll() {
+
+        return "";
+    }
+
+
+    @UserLoginToken
+    @PostMapping("/deleteRuleByIP")
+    public String deleteRuleByIP() {
+
+        return "";
+    }
+
+    @UserLoginToken
+    @PostMapping("/deleteRuleByGroupId")
+    public String deleteRuleByGroupId() {
+
+        return "";
+    }
+
+
+
 }
