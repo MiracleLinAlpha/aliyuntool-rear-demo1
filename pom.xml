@@ -100,7 +100,7 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/asapi-0.0.8.1-RELEASE.jar</systemPath>
 		</dependency>
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<resources>

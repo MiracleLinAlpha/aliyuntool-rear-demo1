@@ -1,0 +1,121 @@
+{
+  "code": "200",
+  "cost": 12,
+  "data": {
+    "accessKeys": [
+      {
+        "accesskeyId": "iMb5H5bkhw2ANkqv",
+        "accesskeySecret": "fINNlFlpHoZ088VRitWMLcDOsUitH0",
+        "ctime": 1594755827000,
+        "cuserId": "super",
+        "id": 247,
+        "region": "cn-haikou-hnzwy157-d01",
+        "status": "ACTIVE"
+      }
+    ],
+    "cellphoneNum": "18708981052",
+    "default": false,
+    "defaultRole": {
+      "active": true,
+      "code": "ROLE_OPERATION_ADMIN",
+      "cuserId": "",
+      "default": true,
+      "description": "defaultRole.operationAdmin.description",
+      "enable": true,
+      "id": 1,
+      "muserId": "",
+      "rAMRole": false,
+      "roleLevel": 2147483647,
+      "roleName": "defaultRole.operationAdmin.name",
+      "roleRange": "roleRange.allOrganizations",
+      "roleType": "ROLETYPE_ASCM"
+    },
+    "deleted": false,
+    "displayName": "高运成",
+    "email": "wb-gyc550703@alibaba-inc.com",
+    "enableDingTalk": true,
+    "enableEmail": true,
+    "enableShortMessage": true,
+    "id": 5225,
+    "lastLoginTime": 1627635771592,
+    "loginName": "gyc_alibaba_admin",
+    "loginPolicy": {
+      "cuserId": "",
+      "default": true,
+      "enable": true,
+      "id": 1,
+      "ipRanges": [
+        {
+          "ipRange": "0.0.0.0/0",
+          "loginPolicyId": 1,
+          "protocol": "IPV4"
+        }
+      ],
+      "muserId": "",
+      "name": "defaultLoginPolicy.name",
+      "rule": "ALLOW",
+      "timeRanges": [
+        {
+          "endTime": "24:00",
+          "loginPolicyId": 1,
+          "startTime": "00:00"
+        }
+      ]
+    },
+    "mobileNationCode": "86",
+    "organization": {
+      "alias": "SystemDefaultOrganization",
+      "cuserId": "",
+      "id": 2,
+      "internal": true,
+      "level": "0.1",
+      "muserId": "",
+      "name": "SystemDefaultOrganization",
+      "parentId": 1,
+      "supportRegionList": [
+        "cn-haikou-hnzwy157-d01"
+      ],
+      "supportRegions": "cn-haikou-hnzwy157-d01"
+    },
+    "parentPk": "1230087015972811",
+    "primaryKey": "253057994784627008",
+    "roles": [
+      {
+        "active": true,
+        "code": "ROLE_OPERATION_ADMIN",
+        "default": true,
+        "description": "defaultRole.operationAdmin.description",
+        "enable": true,
+        "id": 1,
+        "rAMRole": false,
+        "roleLevel": 2147483647,
+        "roleName": "defaultRole.operationAdmin.name",
+        "roleRange": "roleRange.allOrganizations",
+        "roleType": "ROLETYPE_ASCM"
+      }
+    ],
+    "status": "ACTIVE",
+    "userGroupRoles": [],
+    "userRoles": [
+      {
+        "active": true,
+        "code": "ROLE_OPERATION_ADMIN",
+        "cuserId": "",
+        "default": true,
+        "description": "defaultRole.operationAdmin.description",
+        "enable": true,
+        "id": 1,
+        "muserId": "",
+        "rAMRole": false,
+        "roleLevel": 2147483647,
+        "roleName": "defaultRole.operationAdmin.name",
+        "roleRange": "roleRange.allOrganizations",
+        "roleType": "ROLETYPE_ASCM"
+      }
+    ]
+  },
+  "message": "success",
+  "redirect": false,
+  "success": true,
+  "asapiRequestId": "507a57b6-f1c7-417a-8cf2-ed493b48a6a8"
+}

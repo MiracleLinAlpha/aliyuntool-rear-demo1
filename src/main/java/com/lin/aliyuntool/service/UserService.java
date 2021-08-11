@@ -5,18 +5,41 @@ import com.lin.aliyuntool.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * @author jinbin
- * @date 2018-07-08 20:52
- */
 @Service("UserService")
 public class UserService {
     UserMapper userMapper;
-    public User findByUsername(User user){
-        return userMapper.findByUsername(user.getUsername());
+    String resultJson;
+
+    public User findByUser(User user){
+//        return userMapper.findByUser(user);
+        User temp = new User();
+
+        resultJson = "aaaaadisplayNameaaaaa";
+
+        if (resultJson.contains("displayName")) {
+
+            temp.setAccessKeyId("admin");
+            temp.setAccessKeySecret("111111");
+            temp.setDisplayName("高运成");
+
+            return temp;
+        } else {
+            return null;
+        }
     }
-    public User findUserById(String userId) {
-        return userMapper.findUserById(userId);
+    public User findUserByAccessKeyId(String AccessKeyId) {
+//        return userMapper.findByAccessKeyId(AccessKeyId);
+
+        User temp = new User();
+        temp.setAccessKeyId("admin");
+        temp.setAccessKeySecret("111111");
+        temp.setDisplayName("高运成");
+
+        if (AccessKeyId.equals("admin")){
+            return temp;
+        }
+        return null;
     }
+
 
 }
