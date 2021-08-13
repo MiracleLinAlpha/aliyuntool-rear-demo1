@@ -12,6 +12,15 @@ public class requestParams {
 	private String product;
 	private String Version;
 	private String Id;
+	private String displayName;
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
 
 	public requestParams() {
 

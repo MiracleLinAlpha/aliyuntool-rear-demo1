@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class ApiUserRequest {
     String accessKeyId;
     String accessKeySecret;
     String displayName;

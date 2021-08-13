@@ -7,10 +7,9 @@ import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.lin.aliyuntool.annotation.PassToken;
 import com.lin.aliyuntool.annotation.UserLoginToken;
-import com.lin.aliyuntool.entity.User;
+import com.lin.aliyuntool.entity.ApiUserRequest;
 import com.lin.aliyuntool.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
 
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -55,7 +54,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 } catch (JWTDecodeException j) {
                     throw new RuntimeException("401 Unauthorized");
                 }
-                User user = userService.findUserByAccessKeyId(AccessKeyId);
+                ApiUserRequest user = userService.findUserByAccessKeyId(AccessKeyId);
                 if (user == null) {
                     throw new RuntimeException("用户不存在，请重新登录");
                 }

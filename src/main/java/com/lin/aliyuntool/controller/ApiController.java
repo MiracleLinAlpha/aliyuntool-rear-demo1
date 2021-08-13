@@ -1,7 +1,10 @@
 package com.lin.aliyuntool.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lin.aliyuntool.annotation.UserLoginToken;
-import com.lin.aliyuntool.entity.User;
+import com.lin.aliyuntool.entity.ApiSecurityGroupRequest;
+import com.lin.aliyuntool.entity.ApiUserRequest;
+import com.lin.aliyuntool.service.SecurityGruoupService;
 import com.lin.aliyuntool.service.TokenService;
 import com.lin.aliyuntool.service.UserService;
 import com.lin.aliyuntool.util.JacksonUtil;
@@ -18,11 +21,17 @@ public class ApiController {
     UserService userService;
     @Autowired
     TokenService tokenService;
+
+    @Autowired
+    SecurityGruoupService securitygroupservice;
+
+
+
     //登录
     @PostMapping("/login")
-    public Object login(@RequestBody User user){
+    public Object login(@RequestBody ApiUserRequest user) throws JsonProcessingException {
 
-        User userForBase=userService.findByUser(user);
+        ApiUserRequest userForBase=userService.findByUser(user);
         if(userForBase==null){
             Map m = new HashMap();
             m.put("message","登录失败,用户名或密码错误");
@@ -31,11 +40,12 @@ public class ApiController {
             String token = tokenService.getToken(userForBase);
             Map m = new HashMap();
             m.put("token", token);
-            m.put("AccessKeyId", userForBase.getDisplayName());
+            m.put("DisplayName", userForBase.getDisplayName());
             return JacksonUtil.beanToJson(m);
         }
     }
 
+    //查询token是否存在
     @UserLoginToken
     @GetMapping("/getMessage")
     public String getMessage(){
@@ -43,6 +53,9 @@ public class ApiController {
     }
 
 
+
+
+    //退出
     @GetMapping("/logout")
     public String logout(){
         return "退出";
@@ -51,51 +64,43 @@ public class ApiController {
 
 
 
-    @UserLoginToken
-    @PostMapping("/addRuleToAll")
-    public String addRuleToAll() {
-
-        return "";
-    }
-
 
 
     @UserLoginToken
-        @PostMapping("/addRuleByIP")
-    public String addRuleByIP() {
+    @PostMapping("/doSecurityGroupRule")
+    public String doSecurityGroupRule(ApiSecurityGroupRequest asgr, String action) {
 
-        return "";
-    }
+        if (action.equals("AddToAll")) {
 
+            securitygroupservice.AddToAll();
 
-    @UserLoginToken
-    @PostMapping("/addRuleByGroupId")
-    public String addRuleByGroupId() {
+        } else if (action.equals("AddByIP")) {
 
-        return "";
-    }
+            securitygroupservice.AddByIP();
 
+        } else if (action.equals("AddByGroupId")) {
 
-    @UserLoginToken
-    @PostMapping("/deleteRuleToAll")
-    public String deleteRuleToAll() {
+            securitygroupservice.AddByGroupId();
 
-        return "";
-    }
+        } else if (action.equals("DeleteToAll")) {
 
+            securitygroupservice.DeleteToAll();
 
-    @UserLoginToken
-    @PostMapping("/deleteRuleByIP")
-    public String deleteRuleByIP() {
+        } else if (action.equals("DeleteByIP")) {
 
-        return "";
-    }
+            securitygroupservice.DeleteByIP();
 
-    @UserLoginToken
-    @PostMapping("/deleteRuleByGroupId")
-    public String deleteRuleByGroupId() {
+        } else if (action.equals("DeleteByGroupId")) {
 
-        return "";
+            securitygroupservice.DeleteByGroupId();
+
+        } else if (action.equals("Migration")) {
+
+            securitygroupservice.Migration();
+
+        }
+
+        return "params error";
     }
 
 

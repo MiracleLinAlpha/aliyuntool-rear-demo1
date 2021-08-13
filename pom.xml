@@ -117,14 +117,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<!--热部署配置-->
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<!--fork:如果没有该项配置,整个devtools不会起作用-->
 					<fork>true</fork>
+					<!--includeSystemScope:包含导入的JAR包-->
+					<includeSystemScope>true</includeSystemScope>
 				</configuration>
 			</plugin>
 		</plugins>

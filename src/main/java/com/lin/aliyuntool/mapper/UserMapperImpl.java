@@ -1,13 +1,13 @@
 package com.lin.aliyuntool.mapper;
 
-import com.lin.aliyuntool.entity.User;
+import com.lin.aliyuntool.entity.ApiUserRequest;
 
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public User findByUser(User user) {
+    public ApiUserRequest findByUser(ApiUserRequest user) {
         System.out.println("bbbbbb");
-        User temp = new User();
+        ApiUserRequest temp = new ApiUserRequest();
         temp.setAccessKeyId("admin");
         temp.setAccessKeySecret("111111");
         temp.setDisplayName("高运成");
@@ -16,8 +16,8 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public User findByAccessKeyId(String AccessKeyId) {
-        User temp = new User();
+    public ApiUserRequest findByAccessKeyId(String AccessKeyId) {
+        ApiUserRequest temp = new ApiUserRequest();
         temp.setAccessKeyId("admin");
         temp.setAccessKeySecret("111111");
         temp.setDisplayName("高运成");

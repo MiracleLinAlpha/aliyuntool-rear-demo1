@@ -1,9 +1,9 @@
 package com.lin.aliyuntool.mapper;
 
 
-import com.lin.aliyuntool.entity.User;
+import com.lin.aliyuntool.entity.ApiUserRequest;
 
 public interface UserMapper {
-    User findByUser(User user);
-    User findByAccessKeyId(String AccessKeyId);
+    ApiUserRequest findByUser(ApiUserRequest user);
+    ApiUserRequest findByAccessKeyId(String AccessKeyId);
 }
